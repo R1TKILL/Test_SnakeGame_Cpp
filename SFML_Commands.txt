@@ -1,0 +1,18 @@
+#Comando pra gerar .o:
+# Entre aspas, endereço do SFML-version/include
+# Se for usar a versão que não tem terminal no fundo adicione -DSFML_STATIC depois do endereço.
+g++ -c nome_do_arquivo.cpp -I"C:\SFML-2.6.1\include" (opcional)
+
+
+#Comando para gerar o .exe:
+# Entre aspas, endereço do SFML-version/lib
+g++ nome_do_arquivo.o -o nome_do_arquivo -L"C:\SFML-2.6.1\lib" -lsfml-graphics -lsfml-window -lsfml-system
+
+
+#Compilar o exe:
+=> esta barra pode mudar dependendo do sistema ou bash no mesmo, ex: windows, linux, bash linux em windows
+./nome_do_arquivo
+
+
+# Versão melhor para não abrir o terminal no fundo quando for buildar.
+g++ nome_do_arquivo.o -o nome_do_arquivo -L"C:\SFML-2.6.1\lib" -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lwinmm -lgdi32 -mwindows -lsfml-main
